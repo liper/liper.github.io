@@ -1,41 +1,79 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-defineProps<{ msg: string }>()
-
-const count = ref(0)
+// 欢迎页面的逻辑（目前无需额外逻辑）
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
+  <div class="welcome-container">
+    <h1 class="animated-text">Solmorrow</h1>
+    <p class="subtitle">欢迎来到 Solmorrow 的世界</p>
   </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Learn more about IDE Support for Vue in the
-    <a
-      href="https://vuejs.org/guide/scaling-up/tooling.html#ide-support"
-      target="_blank"
-      >Vue Docs Scaling up Guide</a
-    >.
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
 <style scoped>
-.read-the-docs {
-  color: #888;
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1a1a1a;
+  /* 暗色背景 */
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.animated-text {
+  font-size: 4rem;
+  font-weight: bold;
+  animation: colorChange 10s infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #ff6b6b;
+  }
+
+  /* 红色 */
+  14% {
+    color: #ff8c42;
+  }
+
+  /* 橙色 */
+  28% {
+    color: #f9ca24;
+  }
+
+  /* 黄色 */
+  42% {
+    color: #6bcf7f;
+  }
+
+  /* 绿色 */
+  57% {
+    color: #4ecdc4;
+  }
+
+  /* 青色 */
+  71% {
+    color: #45b7d1;
+  }
+
+  /* 蓝色 */
+  85% {
+    color: #9b59b6;
+  }
+
+  /* 紫色 */
+  100% {
+    color: #ff6b6b;
+  }
+
+  /* 回到红色 */
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  opacity: 0.8;
 }
 </style>
